@@ -4,11 +4,15 @@ import (
 	"net/http"
 
 	"github.com/gin-gonic/gin"
+	"github.com/send2gopal/gocrud/database"
+	"github.com/send2gopal/gocrud/database/models"
 	"github.com/send2gopal/gocrud/initializer"
 )
 
 func init() {
 	initializer.LoadEnvironmentvariables()
+	database.ConnectToDB()
+	database.DB.AutoMigrate(&models.User{})
 }
 
 func main() {
