@@ -4,5 +4,9 @@ import "gorm.io/gorm"
 
 type User struct {
 	gorm.Model
-	Name string
+	UserName     string
+	PasswordText string
+	FirstName    string
+	LastName     string
+	Age          int16
 }
